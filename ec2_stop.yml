@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Stop EC2 instance
+      ec2:
+         instance_ids: i-08f3029e1a8742014
+         region: us-west-2
+         state: stopped
+         wait: True
+         vpc_subnet_id: subnet-8d2c1af4
+         assign_public_ip: yes
